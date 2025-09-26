@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickled Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Intro GUI -->
+  <div id="intro-screen">
+    <div class="intro-content">
+      <h1>🎉 Welcome to Pickled 🎉</h1>
+      <h2>Objective</h2>
+      <p>
+        👉 The longer you hold <strong>SPACEBAR</strong>, the higher the score.<br>
+        👉 Multipliers hit at certain milestones.<br>
+        👉 Simple as that. Have fun!
+      </p>
+      <button id="start-btn">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Game Area -->
+  <div id="game">
+    <div id="pickle">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="mouth"></div>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div>Score: <span id="score">0</span></div>
+    <div>Multiplier: <span id="multiplier">1</span>x</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
