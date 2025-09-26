@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  background: linear-gradient(#87CEEB, #e0f7ff);
+  font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
+  overflow: hidden;
+}
+
+/* Game Window */
+#game {
+  position: relative;
+  margin: 20px auto;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(to top, #87CEEB, #fff);
+  border: 4px solid #333;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Pickle */
+#pickle {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 120px;
+  background: #4CAF50;
+  border-radius: 30px;
+  animation: wiggle 0.5s infinite alternate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  margin: 5px;
+  position: relative;
+}
+
+.eye::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  background: black;
+  border-radius: 50%;
+}
+
+.eye.left { margin-right: 8px; }
+.eye.right { margin-left: 8px; }
+
+.mouth {
+  width: 22px;
+  height: 12px;
+  border: 2px solid black;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  margin-top: 5px;
+  background: transparent;
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  from { transform: translateX(-50%) rotate(-2deg); }
+  to { transform: translateX(-50%) rotate(2deg); }
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow: -20px 10px 0 5px white,
+              20px 10px 0 5px white,
+              0 10px 0 10px white;
+}
+
+/* Rainbow */
+.rainbow {
+  position: absolute;
+  width: 150px;
+  height: 75px;
+  border-radius: 75px 75px 0 0;
+  background: conic-gradient(red, orange, yellow, green, blue, indigo, violet, red);
+}
+
+/* HUD */
+#hud {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+/* Particles */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Popups */
+.multiplier-popup {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 2px 2px 5px black;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateX(-50%) scale(1); }
+  to { opacity: 0; transform: translateX(-50%) scale(1.5); }
+}
+
+/* Intro Overlay */
+#intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  color: white;
+}
+
+.intro-content {
+  text-align: center;
+  background: #333;
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  animation: popIn 0.5s ease;
+}
+
+#intro-screen h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #4CAF50;
+  text-shadow: 2px 2px 6px black;
+}
+
+#intro-screen h2 {
+  font-size: 1.8em;
+  margin: 15px 0 10px;
+  color: gold;
+}
+
+#intro-screen p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+#start-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 12px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+  transition: background 0.3s, transform 0.2s;
+}
+
+#start-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
